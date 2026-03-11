@@ -1,0 +1,29 @@
+{% extends 'MyInventoryApp/base.html' %}
+{% load static %}
+
+
+
+                {% block content %}
+                <div class="col-12">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th class="table-dark" scope="col"> Name </th>
+                                <th class="table-dark" scope="col"> City </th>
+                                <th class="table-dark" scope="col"> Country </th>
+                                <th class="table-dark" scope="col"> Created At </th>    
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for s in suppliers %}
+                            <tr>
+                                <td> {{ s.name }} </td>
+                                <td> {{ s.city }} </td>
+                                <td> {{ s.country }} </td>
+                                <td> {{ s.created_at }} </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% endblock %}
