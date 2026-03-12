@@ -1,6 +1,10 @@
 {% extends 'tapasapp/base.html' %}
 {% load static %}
 
+    {% block sidebar %}
+        <a href="{% url 'view_menu' %}">Back to Main</a>
+    {% endblock %}
+    
         <div class="container">
             <div class="row">
 
