@@ -3,32 +3,32 @@
 
 
 
-                {% block content %}
+                {% block bottles %}
                 <div class="col-12">
                     <table class="table table-striped">
-                        <thead>
+                        <thead >
                             <tr>
-                                <th class="table-dark" scope="col"> Sku </th>
+                                <th class="table-dark" scope="col"> SKU </th>
                                 <th class="table-dark" scope="col"> Brand </th>
                                 <th class="table-dark" scope="col"> Cost </th>
                                 <th class="table-dark" scope="col"> Size </th>
                                 <th class="table-dark" scope="col"> Mouth Size </th>
                                 <th class="table-dark" scope="col"> Color </th>
-                                <th class="table-dark" scope="col"> Supplied By </th>
-                                <th class="table-dark" scope="col"> Current Qty </th>     
+                                <th class="table-dark" scope="col"> Supplied by </th>
+                                <th class="table-dark" scope="col"> Current Quantity </th> 
                             </tr>
                         </thead>
                         <tbody>
                             {% for w in waterbottles %}
                             <tr>
-                                <td> {{ w.sku }} </td>
-                                <td> {{ w.brand }} </td>
-                                <td> {{ w.cost }} </td>
-                                <td> {{ w.size }} </td>
-                                <td> {{ w.mouth_size }} </td>
-                                <td> {{ w.color }} </td>
-                                <td> {{ w.supplied_by }} </td>
-                                <td> {{ current_qty }} </td>
+                                <td> {{ w.SKU }} </td>
+                                <td> {{ w.Brand }} </td>
+                                <td> {{ w.Cost }} </td>
+                                <td> {{ w.Size }} </td>
+                                <td> {{ w.Mouth_size }} </td>
+                                <td> {{ w.Color }} </td>
+                                <td> {{ w.Supplied_by }} </td>
+                                <td> {{ w.Current_quantity }} </td>
                             </tr>
                             {% endfor %}
                         </tbody>

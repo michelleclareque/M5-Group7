@@ -3,24 +3,24 @@
 
 
 
-                {% block content %}
+                {% block suppliers %}
                 <div class="col-12">
                     <table class="table table-striped">
-                        <thead>
+                        <thead >
                             <tr>
                                 <th class="table-dark" scope="col"> Name </th>
                                 <th class="table-dark" scope="col"> City </th>
                                 <th class="table-dark" scope="col"> Country </th>
-                                <th class="table-dark" scope="col"> Created At </th>    
+                                <th class="table-dark" scope="col"> Created at </th>
                             </tr>
                         </thead>
                         <tbody>
                             {% for s in suppliers %}
                             <tr>
-                                <td> {{ s.name }} </td>
-                                <td> {{ s.city }} </td>
-                                <td> {{ s.country }} </td>
-                                <td> {{ s.created_at }} </td>
+                                <td> {{ s.Name }} </td>
+                                <td> {{ s.City }} </td>
+                                <td> {{ s.Country }} </td>
+                                <td> {{ s.Created_At }} </td>
                             </tr>
                             {% endfor %}
                         </tbody>
