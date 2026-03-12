@@ -1,37 +1,20 @@
+{% extends 'MyInventoryApp/base.html' %}
 {% load static %}
 
-<html>
-    <head>
-        <title>The Water Bottle List</title>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
-        <link rel="stylesheet" href="{% static '/bootstrap/css/bootstrap.min.css' %}">
-        <link rel="stylesheet" href="{% static '/bootstrap/css/custom.css' %}">
-
-        <script src="{% static '/bootstrap/js/bootstrap.min.js' %}"></script>
-        
-    </head>
-    <body>
-        <nav class="navbar navbar-dark bg-custom mb-3 sticky-top" style="background-color: #063670;">
-            <div class="container-fluid">
-                <a class="navbar-brand mb-0" href="{% url 'view_inventory' %}">My Water Bottle Inventory</span> </a>
-                <a href="" style="color:white"><i class="material-icons">add</i></a>
-    
-            </div>
-
-        </nav>
-
-        <div class="container">
-            <div class="row">
-
-
+                {% block sidebar %}
+                    <a href="{% url 'view_supplier' %}">View Suppliers</a>
+                    <a href="{% url 'view_bottles' %}">View Waterbottles</a>
+                {% endblock %}
+                
+                {% block content %}
                 <div class="col-12">
 
                     <table class="table table-striped">
                         <thead>
-                            <th scope="col"> Name </th>
-                            <th scope="col"> City </th>
-                            <th scope="col"> Country </th>
-                            <th scope="col"> Created at </th>
+                            <th class="border-top border-bottom" scope="col"> Name </th>
+                            <th class="border-top border-bottom" scope="col"> City </th>
+                            <th class="border-top border-bottom" scope="col"> Country </th>
+                            <th class="border-top border-bottom" scope="col"> Created at </th>
                         </thead>
                         <tbody>
                             {% for s in suppliers %}
@@ -39,26 +22,11 @@
                                 <td> {{ s.Name }} </td>
                                 <td> {{ s.City }} </td>
                                 <td> {{ s.Country }} </td>
-                                <td> {{ s.Create_At }} </td>
+                                <td> {{ s.Created_At }} </td>
                             </tr>
                             {% endfor %}
                         </tbody>
                     </table>
 
                 </div>
-            
-
-
-            </div>
-        </div>  
-        
-        <footer class="bg-custom text-white text-center py-3" style="background-color: #063670;">
-
-            <!-- Copyright -->
-            <div class="container">&copy; 2026</div>
-            <!-- Copyright -->
-          
-        </footer>
-
-    </body>
-</html>
+                {% endblock %}

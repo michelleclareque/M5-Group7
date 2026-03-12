@@ -1,41 +1,24 @@
+{% extends 'MyInventoryApp/base.html' %}
 {% load static %}
 
-<html>
-    <head>
-        <title>The Supplier List</title>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
-        <link rel="stylesheet" href="{% static '/bootstrap/css/bootstrap.min.css' %}">
-        <link rel="stylesheet" href="{% static '/bootstrap/css/custom.css' %}">
-
-        <script src="{% static '/bootstrap/js/bootstrap.min.js' %}"></script>
-        
-    </head>
-    <body>
-        <nav class="navbar navbar-dark bg-custom mb-3 sticky-top" style="background-color: #063670;">
-            <div class="container-fluid">
-                <a class="navbar-brand mb-0" href="{% url 'view_inventory' %}">My Suppliers Inventory</span> </a>
-                <a href="" style="color:white"><i class="material-icons">add</i></a>
-    
-            </div>
-
-        </nav>
-
-        <div class="container">
-            <div class="row">
-
-
+                {% block sidebar %}
+                    <a href="{% url 'view_supplier' %}">View Suppliers</a>
+                    <a href="{% url 'view_bottles' %}">View Waterbottles</a>
+                {% endblock %}
+                
+                {% block content %}
                 <div class="col-12">
 
                     <table class="table table-striped">
                         <thead>
-                            <th scope="col"> SKU </th>
-                            <th scope="col"> Brand </th>
-                            <th scope="col"> Cost </th>
-                            <th scope="col"> Size </th>
-                            <th scope="col"> Mouth Size </th>
-                            <th scope="col"> Color </th>
-                            <th scope="col"> Supplied by </th>
-                            <th scope="col"> Current Quantity </th>
+                            <th class="border-top border-bottom" scope="col"> SKU </th>
+                            <th class="border-top border-bottom" scope="col"> Brand </th>
+                            <th class="border-top border-bottom" scope="col"> Cost </th>
+                            <th class="border-top border-bottom" scope="col"> Size </th>
+                            <th class="border-top border-bottom" scope="col"> Mouth Size </th>
+                            <th class="border-top border-bottom" scope="col"> Color </th>
+                            <th class="border-top border-bottom" scope="col"> Supplied by </th>
+                            <th class="border-top border-bottom" scope="col"> Current Quantity </th>
                         </thead>
                         <tbody>
                             {% for w in waterbottles %}
@@ -44,29 +27,14 @@
                                 <td> {{ w.Brand }} </td>
                                 <td> {{ w.Cost }} </td>
                                 <td> {{ w.Size }} </td>
-                                <td> {{ w.Mouth_size }} </td>
+                                <td> {{ w.Mouth_Size }} </td>
                                 <td> {{ w.Color }} </td>
-                                <td> {{ w.Supplied_by }} </td>
-                                <td> {{ w.Current_quantity }} </td>
+                                <td> {{ w.Supplied_by.Name }} </td>
+                                <td> {{ w.Current_Quantity }} </td>
                             </tr>
                             {% endfor %}
                         </tbody>
                     </table>
 
                 </div>
-            
-
-
-            </div>
-        </div>  
-        
-        <footer class="bg-custom text-white text-center py-3" style="background-color: #063670;">
-
-            <!-- Copyright -->
-            <div class="container">&copy; 2026</div>
-            <!-- Copyright -->
-          
-        </footer>
-
-    </body>
-</html>
+                {% endblock %}
